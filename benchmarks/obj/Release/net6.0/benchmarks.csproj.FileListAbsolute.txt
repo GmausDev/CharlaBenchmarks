@@ -92,3 +92,4 @@ C:\src\CharlaBenchmarks\benchmarks\obj\Release\net6.0\refint\benchmarks.dll
 C:\src\CharlaBenchmarks\benchmarks\obj\Release\net6.0\benchmarks.pdb
 C:\src\CharlaBenchmarks\benchmarks\obj\Release\net6.0\benchmarks.genruntimeconfig.cache
 C:\src\CharlaBenchmarks\benchmarks\obj\Release\net6.0\ref\benchmarks.dll
+C:\src\CharlaBenchmarks\benchmarks\obj\Release\net6.0\benchmarks.sourcelink.json

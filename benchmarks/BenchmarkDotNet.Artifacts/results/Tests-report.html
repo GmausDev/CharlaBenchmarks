@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>Tests-20240208-144000</title>
+<title>Tests-20240208-150127</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -16,21 +16,37 @@
 BenchmarkDotNet v0.13.8, Windows 11 (10.0.22621.3007/22H2/2022Update/SunValley2)
 12th Gen Intel Core i7-1255U, 1 CPU, 12 logical and 10 physical cores
 .NET SDK 8.0.200-preview.23624.5
-  [Host]     : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
-  DefaultJob : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  [Host]         : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  .NET 6         : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  .NET 8         : .NET 8.0.1 (8.0.123.58001), X64 RyuJIT AVX2
+  .NET 8 w/o PGO : .NET 8.0.1 (8.0.123.58001), X64 RyuJIT AVX2
 </code></pre>
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>Method                 </th><th>Mean</th>
+<thead><tr><th>Method                 </th><th>Job     </th><th>EnvironmentVariables</th><th>Runtime</th><th>Mean</th><th>Ratio</th>
 </tr>
-</thead><tbody><tr><td>RandomNextMax</td><td>8.108 ns</td>
-</tr><tr><td>EnumeratorGetList</td><td>11.320 ns</td>
-</tr><tr><td>EnumeratorGetQueue</td><td>11.469 ns</td>
-</tr><tr><td>EnumeratorGetHashSet</td><td>11.260 ns</td>
-</tr><tr><td>EnumeratorGetDictionary</td><td>14.087 ns</td>
-</tr><tr><td>EnumeratorGetSortedDictionary</td><td>42.137 ns</td>
-</tr><tr><td>EnumeratorGetSortedList</td><td>10.233 ns</td>
+</thead><tbody><tr><td>RandomNextMax</td><td>.NET 6</td><td>Empty</td><td>.NET 6.0</td><td>4.8249 ns</td><td>1.00</td>
+</tr><tr><td>RandomNextMax</td><td>.NET 8</td><td>Empty</td><td>.NET 8.0</td><td>0.5471 ns</td><td>0.11</td>
+</tr><tr><td>RandomNextMax</td><td>.NET 8 w/o PGO</td><td>DOTNET_TieredPGO=0</td><td>.NET 8.0</td><td>1.6330 ns</td><td>0.34</td>
+</tr><tr><td>EnumeratorGetList</td><td>.NET 6</td><td>Empty</td><td>.NET 6.0</td><td>7.1036 ns</td><td>1.00</td>
+</tr><tr><td>EnumeratorGetList</td><td>.NET 8</td><td>Empty</td><td>.NET 8.0</td><td>2.0680 ns</td><td>0.29</td>
+</tr><tr><td>EnumeratorGetList</td><td>.NET 8 w/o PGO</td><td>DOTNET_TieredPGO=0</td><td>.NET 8.0</td><td>2.2494 ns</td><td>0.32</td>
+</tr><tr><td>EnumeratorGetQueue</td><td>.NET 6</td><td>Empty</td><td>.NET 6.0</td><td>7.0760 ns</td><td>1.00</td>
+</tr><tr><td>EnumeratorGetQueue</td><td>.NET 8</td><td>Empty</td><td>.NET 8.0</td><td>1.3186 ns</td><td>0.19</td>
+</tr><tr><td>EnumeratorGetQueue</td><td>.NET 8 w/o PGO</td><td>DOTNET_TieredPGO=0</td><td>.NET 8.0</td><td>2.5538 ns</td><td>0.36</td>
+</tr><tr><td>EnumeratorGetHashSet</td><td>.NET 6</td><td>Empty</td><td>.NET 6.0</td><td>6.8756 ns</td><td>1.00</td>
+</tr><tr><td>EnumeratorGetHashSet</td><td>.NET 8</td><td>Empty</td><td>.NET 8.0</td><td>1.3525 ns</td><td>0.20</td>
+</tr><tr><td>EnumeratorGetHashSet</td><td>.NET 8 w/o PGO</td><td>DOTNET_TieredPGO=0</td><td>.NET 8.0</td><td>2.5061 ns</td><td>0.39</td>
+</tr><tr><td>EnumeratorGetDictionary</td><td>.NET 6</td><td>Empty</td><td>.NET 6.0</td><td>9.8867 ns</td><td>1.00</td>
+</tr><tr><td>EnumeratorGetDictionary</td><td>.NET 8</td><td>Empty</td><td>.NET 8.0</td><td>1.7093 ns</td><td>0.17</td>
+</tr><tr><td>EnumeratorGetDictionary</td><td>.NET 8 w/o PGO</td><td>DOTNET_TieredPGO=0</td><td>.NET 8.0</td><td>2.4475 ns</td><td>0.25</td>
+</tr><tr><td>EnumeratorGetSortedDictionary</td><td>.NET 6</td><td>Empty</td><td>.NET 6.0</td><td>25.7359 ns</td><td>1.00</td>
+</tr><tr><td>EnumeratorGetSortedDictionary</td><td>.NET 8</td><td>Empty</td><td>.NET 8.0</td><td>3.5990 ns</td><td>0.15</td>
+</tr><tr><td>EnumeratorGetSortedDictionary</td><td>.NET 8 w/o PGO</td><td>DOTNET_TieredPGO=0</td><td>.NET 8.0</td><td>5.4946 ns</td><td>0.21</td>
+</tr><tr><td>EnumeratorGetSortedList</td><td>.NET 6</td><td>Empty</td><td>.NET 6.0</td><td>9.6988 ns</td><td>1.00</td>
+</tr><tr><td>EnumeratorGetSortedList</td><td>.NET 8</td><td>Empty</td><td>.NET 8.0</td><td>2.3409 ns</td><td>0.24</td>
+</tr><tr><td>EnumeratorGetSortedList</td><td>.NET 8 w/o PGO</td><td>DOTNET_TieredPGO=0</td><td>.NET 8.0</td><td>5.1566 ns</td><td>0.53</td>
 </tr></tbody></table>
 </body>
 </html>

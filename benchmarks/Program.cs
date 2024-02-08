@@ -18,8 +18,9 @@ var config = DefaultConfig.Instance
     .AddJob(Job.Default.WithId(".NET 8 w/o PGO").WithRuntime(CoreRuntime.Core80).WithEnvironmentVariable("DOTNET_TieredPGO", "0"))
     .AddJob(Job.Default.WithId(".NET 8").WithRuntime(CoreRuntime.Core80));
 
+BenchmarkSwitcher.FromAssembly(typeof(Tests).Assembly).Run(args, config);
 
-BenchmarkSwitcher.FromAssembly(typeof(Tests).Assembly).Run(args);
+// BenchmarkSwitcher.FromAssembly(typeof(Tests).Assembly).Run(args);
 // [MemoryDiagnoser(displayGenColumns: false)]
 [HideColumns("Error", "StdDev", "Median", "RatioSD")]
 public class Tests
