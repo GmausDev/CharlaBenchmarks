@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Tests-20240208-144000</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.8, Windows 11 (10.0.22621.3007/22H2/2022Update/SunValley2)
+12th Gen Intel Core i7-1255U, 1 CPU, 12 logical and 10 physical cores
+.NET SDK 8.0.200-preview.23624.5
+  [Host]     : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  DefaultJob : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method                 </th><th>Mean</th>
+</tr>
+</thead><tbody><tr><td>RandomNextMax</td><td>8.108 ns</td>
+</tr><tr><td>EnumeratorGetList</td><td>11.320 ns</td>
+</tr><tr><td>EnumeratorGetQueue</td><td>11.469 ns</td>
+</tr><tr><td>EnumeratorGetHashSet</td><td>11.260 ns</td>
+</tr><tr><td>EnumeratorGetDictionary</td><td>14.087 ns</td>
+</tr><tr><td>EnumeratorGetSortedDictionary</td><td>42.137 ns</td>
+</tr><tr><td>EnumeratorGetSortedList</td><td>10.233 ns</td>
+</tr></tbody></table>
+</body>
+</html>

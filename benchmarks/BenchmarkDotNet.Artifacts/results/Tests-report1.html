@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Tests-20240208-123930</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.8, Windows 11 (10.0.22621.3007/22H2/2022Update/SunValley2)
+12th Gen Intel Core i7-1255U, 1 CPU, 12 logical and 10 physical cores
+.NET SDK 8.0.200-preview.23624.5
+  [Host]     : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  Job-GTMSAC : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  Job-QFQERJ : .NET 8.0.1 (8.0.123.58001), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method              </th><th>Runtime</th><th>Length</th><th>i   </th><th>Mean  </th><th>Ratio</th>
+</tr>
+</thead><tbody><tr><td>NumeroInt32ToString</td><td>.NET 6.0</td><td>4</td><td>12</td><td>9.011 ns</td><td>1.00</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 8.0</td><td>4</td><td>12</td><td>2.880 ns</td><td>0.33</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 6.0</td><td>4</td><td>123</td><td>8.413 ns</td><td>1.00</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 8.0</td><td>4</td><td>123</td><td>2.610 ns</td><td>0.31</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 6.0</td><td>4</td><td>1234567890</td><td>14.507 ns</td><td>1.00</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 8.0</td><td>4</td><td>1234567890</td><td>13.168 ns</td><td>0.91</td>
+</tr><tr><td>EnumIsDefined</td><td>.NET 6.0</td><td>4</td><td>?</td><td>16.967 ns</td><td>1.00</td>
+</tr><tr><td>EnumIsDefined</td><td>.NET 8.0</td><td>4</td><td>?</td><td>2.902 ns</td><td>0.17</td>
+</tr><tr><td>EnumGetName</td><td>.NET 6.0</td><td>4</td><td>?</td><td>15.369 ns</td><td>1.00</td>
+</tr><tr><td>EnumGetName</td><td>.NET 8.0</td><td>4</td><td>?</td><td>2.442 ns</td><td>0.16</td>
+</tr><tr><td>EnumGetNames</td><td>.NET 6.0</td><td>4</td><td>?</td><td>16.033 ns</td><td>1.00</td>
+</tr><tr><td>EnumGetNames</td><td>.NET 8.0</td><td>4</td><td>?</td><td>17.781 ns</td><td>1.11</td>
+</tr><tr><td>EnumGetValues</td><td>.NET 6.0</td><td>4</td><td>?</td><td>385.798 ns</td><td>1.00</td>
+</tr><tr><td>EnumGetValues</td><td>.NET 8.0</td><td>4</td><td>?</td><td>33.361 ns</td><td>0.09</td>
+</tr><tr><td>EnumToString</td><td>.NET 6.0</td><td>4</td><td>?</td><td>13.670 ns</td><td>1.00</td>
+</tr><tr><td>EnumToString</td><td>.NET 8.0</td><td>4</td><td>?</td><td>10.657 ns</td><td>0.78</td>
+</tr><tr><td>EnumTryParse</td><td>.NET 6.0</td><td>4</td><td>?</td><td>40.183 ns</td><td>1.00</td>
+</tr><tr><td>EnumTryParse</td><td>.NET 8.0</td><td>4</td><td>?</td><td>25.406 ns</td><td>0.63</td>
+</tr><tr><td>DateTimeParseExact</td><td>.NET 6.0</td><td>4</td><td>?</td><td>827.452 ns</td><td>1.00</td>
+</tr><tr><td>DateTimeParseExact</td><td>.NET 8.0</td><td>4</td><td>?</td><td>231.133 ns</td><td>0.28</td>
+</tr><tr><td>HexaConvertFromHex</td><td>.NET 6.0</td><td>4</td><td>?</td><td>11.333 ns</td><td>1.00</td>
+</tr><tr><td>HexaConvertFromHex</td><td>.NET 8.0</td><td>4</td><td>?</td><td>13.833 ns</td><td>1.23</td>
+</tr><tr><td>StringBuilderReplaceBigger</td><td>.NET 6.0</td><td>4</td><td>?</td><td>400.853 ns</td><td>1.00</td>
+</tr><tr><td>StringBuilderReplaceBigger</td><td>.NET 8.0</td><td>4</td><td>?</td><td>38.806 ns</td><td>0.10</td>
+</tr><tr><td>StringBuilderAppend</td><td>.NET 6.0</td><td>4</td><td>?</td><td>8.864 ns</td><td>1.00</td>
+</tr><tr><td>StringBuilderAppend</td><td>.NET 8.0</td><td>4</td><td>?</td><td>2.508 ns</td><td>0.34</td>
+</tr><tr><td>StringBuilderReplace</td><td>.NET 6.0</td><td>4</td><td>?</td><td>94.472 ns</td><td>1.00</td>
+</tr><tr><td>StringBuilderReplace</td><td>.NET 8.0</td><td>4</td><td>?</td><td>25.664 ns</td><td>0.27</td>
+</tr><tr><td>linqCount</td><td>.NET 6.0</td><td>4</td><td>?</td><td>4,539.352 ns</td><td>1.00</td>
+</tr><tr><td>linqCount</td><td>.NET 8.0</td><td>4</td><td>?</td><td>701.382 ns</td><td>0.16</td>
+</tr><tr><td>CountLINQ</td><td>.NET 6.0</td><td>4</td><td>?</td><td>3,119.288 ns</td><td>1.000</td>
+</tr><tr><td>CountLINQ</td><td>.NET 8.0</td><td>4</td><td>?</td><td>8.239 ns</td><td>0.003</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 6.0</td><td>16</td><td>12</td><td>8.622 ns</td><td>1.00</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 8.0</td><td>16</td><td>12</td><td>4.413 ns</td><td>0.52</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 6.0</td><td>16</td><td>123</td><td>14.767 ns</td><td>1.00</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 8.0</td><td>16</td><td>123</td><td>3.180 ns</td><td>0.22</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 6.0</td><td>16</td><td>1234567890</td><td>20.701 ns</td><td>1.00</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 8.0</td><td>16</td><td>1234567890</td><td>21.077 ns</td><td>0.98</td>
+</tr><tr><td>EnumIsDefined</td><td>.NET 6.0</td><td>16</td><td>?</td><td>22.606 ns</td><td>1.00</td>
+</tr><tr><td>EnumIsDefined</td><td>.NET 8.0</td><td>16</td><td>?</td><td>3.534 ns</td><td>0.15</td>
+</tr><tr><td>EnumGetName</td><td>.NET 6.0</td><td>16</td><td>?</td><td>23.785 ns</td><td>1.00</td>
+</tr><tr><td>EnumGetName</td><td>.NET 8.0</td><td>16</td><td>?</td><td>3.911 ns</td><td>0.17</td>
+</tr><tr><td>EnumGetNames</td><td>.NET 6.0</td><td>16</td><td>?</td><td>29.382 ns</td><td>1.00</td>
+</tr><tr><td>EnumGetNames</td><td>.NET 8.0</td><td>16</td><td>?</td><td>19.049 ns</td><td>0.66</td>
+</tr><tr><td>EnumGetValues</td><td>.NET 6.0</td><td>16</td><td>?</td><td>700.791 ns</td><td>1.00</td>
+</tr><tr><td>EnumGetValues</td><td>.NET 8.0</td><td>16</td><td>?</td><td>31.116 ns</td><td>0.04</td>
+</tr><tr><td>EnumToString</td><td>.NET 6.0</td><td>16</td><td>?</td><td>25.619 ns</td><td>1.00</td>
+</tr><tr><td>EnumToString</td><td>.NET 8.0</td><td>16</td><td>?</td><td>11.088 ns</td><td>0.43</td>
+</tr><tr><td>EnumTryParse</td><td>.NET 6.0</td><td>16</td><td>?</td><td>65.967 ns</td><td>1.00</td>
+</tr><tr><td>EnumTryParse</td><td>.NET 8.0</td><td>16</td><td>?</td><td>23.018 ns</td><td>0.35</td>
+</tr><tr><td>DateTimeParseExact</td><td>.NET 6.0</td><td>16</td><td>?</td><td>1,268.319 ns</td><td>1.00</td>
+</tr><tr><td>DateTimeParseExact</td><td>.NET 8.0</td><td>16</td><td>?</td><td>224.100 ns</td><td>0.18</td>
+</tr><tr><td>HexaConvertFromHex</td><td>.NET 6.0</td><td>16</td><td>?</td><td>52.645 ns</td><td>1.00</td>
+</tr><tr><td>HexaConvertFromHex</td><td>.NET 8.0</td><td>16</td><td>?</td><td>16.056 ns</td><td>0.31</td>
+</tr><tr><td>StringBuilderReplaceBigger</td><td>.NET 6.0</td><td>16</td><td>?</td><td>542.017 ns</td><td>1.00</td>
+</tr><tr><td>StringBuilderReplaceBigger</td><td>.NET 8.0</td><td>16</td><td>?</td><td>35.406 ns</td><td>0.07</td>
+</tr><tr><td>StringBuilderAppend</td><td>.NET 6.0</td><td>16</td><td>?</td><td>9.102 ns</td><td>1.00</td>
+</tr><tr><td>StringBuilderAppend</td><td>.NET 8.0</td><td>16</td><td>?</td><td>2.404 ns</td><td>0.26</td>
+</tr><tr><td>StringBuilderReplace</td><td>.NET 6.0</td><td>16</td><td>?</td><td>201.241 ns</td><td>1.00</td>
+</tr><tr><td>StringBuilderReplace</td><td>.NET 8.0</td><td>16</td><td>?</td><td>22.702 ns</td><td>0.22</td>
+</tr><tr><td>linqCount</td><td>.NET 6.0</td><td>16</td><td>?</td><td>8,876.620 ns</td><td>1.00</td>
+</tr><tr><td>linqCount</td><td>.NET 8.0</td><td>16</td><td>?</td><td>633.128 ns</td><td>0.08</td>
+</tr><tr><td>CountLINQ</td><td>.NET 6.0</td><td>16</td><td>?</td><td>7,291.042 ns</td><td>1.000</td>
+</tr><tr><td>CountLINQ</td><td>.NET 8.0</td><td>16</td><td>?</td><td>8.349 ns</td><td>0.001</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 6.0</td><td>128</td><td>12</td><td>8.377 ns</td><td>1.00</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 8.0</td><td>128</td><td>12</td><td>2.999 ns</td><td>0.37</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 6.0</td><td>128</td><td>123</td><td>8.371 ns</td><td>1.00</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 8.0</td><td>128</td><td>123</td><td>2.824 ns</td><td>0.35</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 6.0</td><td>128</td><td>1234567890</td><td>14.656 ns</td><td>1.00</td>
+</tr><tr><td>NumeroInt32ToString</td><td>.NET 8.0</td><td>128</td><td>1234567890</td><td>11.629 ns</td><td>0.77</td>
+</tr><tr><td>EnumIsDefined</td><td>.NET 6.0</td><td>128</td><td>?</td><td>15.719 ns</td><td>1.00</td>
+</tr><tr><td>EnumIsDefined</td><td>.NET 8.0</td><td>128</td><td>?</td><td>2.262 ns</td><td>0.14</td>
+</tr><tr><td>EnumGetName</td><td>.NET 6.0</td><td>128</td><td>?</td><td>17.186 ns</td><td>1.00</td>
+</tr><tr><td>EnumGetName</td><td>.NET 8.0</td><td>128</td><td>?</td><td>2.143 ns</td><td>0.13</td>
+</tr><tr><td>EnumGetNames</td><td>.NET 6.0</td><td>128</td><td>?</td><td>18.522 ns</td><td>1.00</td>
+</tr><tr><td>EnumGetNames</td><td>.NET 8.0</td><td>128</td><td>?</td><td>15.726 ns</td><td>0.88</td>
+</tr><tr><td>EnumGetValues</td><td>.NET 6.0</td><td>128</td><td>?</td><td>444.963 ns</td><td>1.00</td>
+</tr><tr><td>EnumGetValues</td><td>.NET 8.0</td><td>128</td><td>?</td><td>29.557 ns</td><td>0.07</td>
+</tr><tr><td>EnumToString</td><td>.NET 6.0</td><td>128</td><td>?</td><td>14.893 ns</td><td>1.00</td>
+</tr><tr><td>EnumToString</td><td>.NET 8.0</td><td>128</td><td>?</td><td>10.043 ns</td><td>0.67</td>
+</tr><tr><td>EnumTryParse</td><td>.NET 6.0</td><td>128</td><td>?</td><td>40.788 ns</td><td>1.00</td>
+</tr><tr><td>EnumTryParse</td><td>.NET 8.0</td><td>128</td><td>?</td><td>23.199 ns</td><td>0.57</td>
+</tr><tr><td>DateTimeParseExact</td><td>.NET 6.0</td><td>128</td><td>?</td><td>820.612 ns</td><td>1.00</td>
+</tr><tr><td>DateTimeParseExact</td><td>.NET 8.0</td><td>128</td><td>?</td><td>209.238 ns</td><td>0.25</td>
+</tr><tr><td>HexaConvertFromHex</td><td>.NET 6.0</td><td>128</td><td>?</td><td>178.412 ns</td><td>1.00</td>
+</tr><tr><td>HexaConvertFromHex</td><td>.NET 8.0</td><td>128</td><td>?</td><td>43.737 ns</td><td>0.25</td>
+</tr><tr><td>StringBuilderReplaceBigger</td><td>.NET 6.0</td><td>128</td><td>?</td><td>392.802 ns</td><td>1.00</td>
+</tr><tr><td>StringBuilderReplaceBigger</td><td>.NET 8.0</td><td>128</td><td>?</td><td>35.207 ns</td><td>0.09</td>
+</tr><tr><td>StringBuilderAppend</td><td>.NET 6.0</td><td>128</td><td>?</td><td>8.926 ns</td><td>1.00</td>
+</tr><tr><td>StringBuilderAppend</td><td>.NET 8.0</td><td>128</td><td>?</td><td>2.375 ns</td><td>0.26</td>
+</tr><tr><td>StringBuilderReplace</td><td>.NET 6.0</td><td>128</td><td>?</td><td>96.652 ns</td><td>1.00</td>
+</tr><tr><td>StringBuilderReplace</td><td>.NET 8.0</td><td>128</td><td>?</td><td>24.357 ns</td><td>0.25</td>
+</tr><tr><td>linqCount</td><td>.NET 6.0</td><td>128</td><td>?</td><td>4,757.406 ns</td><td>1.00</td>
+</tr><tr><td>linqCount</td><td>.NET 8.0</td><td>128</td><td>?</td><td>652.758 ns</td><td>0.14</td>
+</tr><tr><td>CountLINQ</td><td>.NET 6.0</td><td>128</td><td>?</td><td>3,218.560 ns</td><td>1.000</td>
+</tr><tr><td>CountLINQ</td><td>.NET 8.0</td><td>128</td><td>?</td><td>8.956 ns</td><td>0.003</td>
+</tr></tbody></table>
+</body>
+</html>
